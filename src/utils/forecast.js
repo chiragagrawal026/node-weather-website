@@ -14,7 +14,8 @@ const forecast = (latitude, longitude, callback) => {
             callback(undefined, {
                 description: body.daily[0].weather[0].description,
                 temperature: body.current.temp,
-                humidity: body.current.humidity
+                humidity: body.current.humidity,
+                moreData: 'Min temperature = ' + body.daily[0].temp.min + ', Max temperature = ' + body.daily[0].temp.max 
             })    
         } 
     })
